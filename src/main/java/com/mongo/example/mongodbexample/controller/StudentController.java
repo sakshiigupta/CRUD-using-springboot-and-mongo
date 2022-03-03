@@ -22,4 +22,9 @@ public class StudentController {
     public void addStudent(@RequestBody Student student){
         studentService.addStudent(student);
     }
+
+    @RequestMapping(value = "/students/{id}", method = RequestMethod.PUT)
+    public void updateStduent(@RequestBody Student student, @PathVariable int id){
+        studentService.updateStudent(student, id);
+    }
 }
