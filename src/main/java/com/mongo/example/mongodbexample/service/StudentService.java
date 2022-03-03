@@ -14,15 +14,18 @@ public class StudentService {
     @Autowired
     private StudentRepository studentRepository;
 
+    //Read method
     public List<Student> getAllStudents() {
         List<Student> students = studentRepository.findAll();
         return students;
     }
 
+    //Create and add method
     public void addStudent(Student student) {
         studentRepository.save(student);
     }
 
+    //Update  method
     public void updateStudent(Student student, int id) {
         Optional<Student> oldStudent = studentRepository.findById(id);
         if(oldStudent.isPresent()){
@@ -30,4 +33,12 @@ public class StudentService {
         }
 
     }
+
+    //Delete Method
+    public void deleteStudent(int id) {
+        studentRepository.deleteById(id);
+    }
+
+
+
 }
