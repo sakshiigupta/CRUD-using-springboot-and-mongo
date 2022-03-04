@@ -33,6 +33,13 @@ public class StudentService {
         }
 
     }
+    //update only name
+    public void updateStudentByName(String name, int id) {
+        Student student = studentRepository.findById(id).get();
+        student.setName(name);
+        studentRepository.save(student);
+
+    }
 
     //Delete Method
     public void deleteStudent(int id) {

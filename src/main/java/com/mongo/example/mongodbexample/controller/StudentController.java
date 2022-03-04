@@ -28,6 +28,11 @@ public class StudentController {
         studentService.updateStudent(student, id);
     }
 
+    @RequestMapping(value = "/students/{id}/name", method = RequestMethod.PUT)
+    public void updateStudentByName(@RequestBody String name, @PathVariable int id){
+        studentService.updateStudentByName(name, id);
+    }
+
     @RequestMapping(value = "/students/{id}", method = RequestMethod.DELETE)
     public void deleteStudent(@PathVariable int id){
         studentService.deleteStudent(id);
